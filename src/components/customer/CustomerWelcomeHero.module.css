@@ -1,0 +1,192 @@
+/* Blue Lounge welcome hero.
+   Composition: one quiet sphere with hairline rings (a lit ice sphere seen
+   across the bar), set against left-aligned serif type. Everything else is
+   restrained. All styles are isolated to this module. */
+
+.hero {
+  --ring-1: 12px;
+  --ring-2: 30px;
+  --orb-size: 128px;
+
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  min-height: calc(100svh - 130px);
+  margin: auto;
+  padding: 40px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  color: var(--text);
+}
+
+.cover{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.58;pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#111211 0%,#111211bc 30%,#1112115c 70%,#1112113b 100%),linear-gradient(0deg,#111211 0%,transparent 58%);pointer-events:none}
+
+/* ---------- Ambient detail (static, decorative) ---------- */
+
+.orb {
+  position: absolute;
+  z-index: 0;
+  top: 56px;
+  right: calc(var(--ring-2) + 20px);
+  width: var(--orb-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgb(223 201 159 / 0.38);
+  background:
+    radial-gradient(
+      circle at 34% 28%,
+      rgb(245 226 183 / 0.58),
+      rgb(223 201 159 / 0.20) 19%,
+      rgb(223 201 159 / 0.04) 38%,
+      transparent 50%
+    ),
+    radial-gradient(circle at 60% 66%, rgb(56 52 44 / 0.86), rgb(31 31 28 / 0.72) 48%, rgb(17 18 17 / 0.44) 76%);
+  box-shadow:
+    inset -14px -20px 36px rgb(0 0 0 / 0.26),
+    0 0 0 var(--ring-1) var(--bg),
+    0 0 0 calc(var(--ring-1) + 1px) var(--line),
+    0 0 0 var(--ring-2) var(--bg),
+    0 0 0 calc(var(--ring-2) + 1px) rgb(195 168 117 / 0.18);
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+/* ---------- Content ---------- */
+
+.content {
+  position:relative;
+  z-index:1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 34rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 28px;
+  font: 500 0.8125rem/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.14em;
+  color: var(--gold-light);
+}
+
+.brand::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.title {
+  margin: 0 0 24px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 15vw, 5.125rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.line {
+  display: block;
+}
+
+.tagline {
+  margin: 0 0 36px;
+  max-width: 28ch;
+  font: italic 400 1.125rem/1.55 var(--serif);
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 30px;
+  background: var(--gold);
+  color: var(--bg);
+  border: 1px solid var(--gold);
+  font: 600 0.9375rem/1 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.cta:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+/* ---------- Small phones ---------- */
+
+@media (max-width: 359px) {
+  .cta {
+    width: 100%;
+  }
+}
+
+/* ---------- Tablet and up ---------- */
+
+@media (min-width: 720px) {
+  .hero {
+    --ring-1: 18px;
+    --ring-2: 36px;
+    --orb-size: clamp(220px, 28vw, 290px);
+
+    min-height: 600px;
+    padding: 72px 4vw;
+    justify-content: center;
+  }
+
+  .orb {
+    top: 50%;
+    right: calc(var(--ring-2) + 4vw);
+    transform: translateY(-50%);
+  }
+
+  .title {
+    font-size: clamp(4rem, 8.4vw, 5.75rem);
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------- One-time entrance, motion-safe only ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .orb {
+    animation: orb-in 1.4s ease-out both;
+  }
+}
+
+@keyframes orb-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta {
+    transition: none;
+  }
+}

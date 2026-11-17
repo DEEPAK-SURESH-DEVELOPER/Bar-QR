@@ -1,0 +1,93 @@
+/* Shared production type scale: readable body copy, controls, and metadata. */
+.workspace-label,
+.eyebrow { font-size: 11px; }
+.nav-link { font-size: 14px; }
+.preview-link,
+.quick-links a,
+.text-link,
+.button { font-size: 13px; }
+.workspace-note { font-size: 12px; }
+.workspace-note small,
+.brand-lockup small { font-size: 11px; }
+.topbar { font-size: 11px; }
+.muted { font-size: 14px; }
+.stat-top { font-size: 13px; }
+.stat-card small,
+.featured-details small,
+.activity-row small,
+.action-card small { font-size: 12px; }
+.section-heading > a,
+.featured-details strong,
+.featured-price,
+.action-card b { font-size: 13px; }
+.availability,
+.activity-count,
+.activity-row strong,
+.dashboard-footnote,
+.empty-state { font-size: 12px; }
+.empty-state p { font-size: 13px; }
+.field,
+.field > span,
+.image-field > label { font-size: 13px; }
+.field input,
+.field textarea,
+.field select,
+.quick-price-input { font-size: 14px; }
+.field small:not(.field-hint),
+.field-hint,
+.field-error,
+.toggle-row b,
+.toggle-row small,
+.upload-button,
+.profile-section-title p,
+.toolbar-note { font-size: 12px; }
+.category-admin-info p,
+.category-admin-info > small,
+.status-pill { font-size: 12px; }
+.search-field input,
+.select-wrap select { font-size: 14px; }
+.result-count { font-size: 12px; }
+.menu-table th { font-size: 11px; }
+.menu-table th small { font-size: 10px; }
+.menu-table td,
+.table-product b,
+.price-edit,
+.availability-toggle { font-size: 13px; }
+.table-product small { font-size: 12px; }
+.qr-print-brand small { font-size: 10px; }
+.qr-url-row small { font-size: 10px; }
+.qr-url-row code { font-size: 12px; }
+.qr-state,
+.domain-card > p:not(.field-hint),
+.notice,
+.print-tips ul,
+.print-tips .muted { font-size: 12px; }
+
+.customer-brand { font-size: 14px; }
+.customer-header nav { font-size: 14px; }
+.customer-footer { font-size: 11px; }
+.customer-footer .footer-brand { font-size: 13px; }
+.customer-section-heading > a { font-size: 13px; }
+.customer-search { min-height: 42px; }
+.customer-search input { font-size: 14px; }
+.customer-menu-group .customer-section-heading p:not(.eyebrow) { font-size: 14px; }
+.contact-card > a span,
+.customer-hours-row,
+.contact-socials a { font-size: 13px; }
+.tag-list span { font-size: 11px; }
+
+@media (max-width: 760px) {
+  /* The compact admin rail is icon-only on phones. */
+  .nav-link { font-size: 0; }
+  .customer-brand { font-size: 13px; }
+  .customer-header nav { font-size: 13px; }
+  .customer-product-grid .name { font-size: 20px; }
+  .customer-product-grid .description { font-size: 14px; }
+  .customer-footer { font-size: 10px; }
+  .customer-footer .footer-brand { font-size: 12px; }
+}
+
+@media (max-width: 400px) {
+  .customer-header nav { gap: 8px; font-size: 13px; }
+  .customer-footer span { font-size: 10px; }
+}
