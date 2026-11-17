@@ -26,5 +26,5 @@ npm run lint
 - The admin sign-in is a browser-only demo gate, not production security. Replace it with server-side authentication and authorization before deploying real business data.
 - The QR starts at `https://yourdomain.com/menu/blue-lounge`. Configure the real deployed HTTPS domain on the QR page before printing. The bar slug is fixed so the public menu path remains stable.
 - Image uploads are validated and stored as browser-local data URLs; large numbers of images can exceed browser storage limits. Keep uploads concise and optimized.
-- Production hosting must serve the Vite build and rewrite deep links such as `/menu/blue-lounge/items` to `index.html` for client-side routing.
+- Vercel deployments use the root `vercel.json` rewrite so direct visits and refreshes on client routes such as `/admin/menu` resolve through `index.html`. Other production hosts need the equivalent SPA fallback.
 - The public menu is browsing only; it has no ordering, cart or payment flow.
