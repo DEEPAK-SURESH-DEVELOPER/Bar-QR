@@ -58,7 +58,7 @@ export default function AdminLayout() {
   return <div className="admin-shell">
     {isMobileSidebarOpen ? <button type="button" className="sidebar-backdrop" aria-label="Close navigation menu" onClick={closeMobileSidebar} /> : null}
     <aside id="admin-sidebar" className={`sidebar${isSidebarCollapsed ? ' sidebar-collapsed' : ''}${isMobileSidebarOpen ? ' mobile-open' : ''}`} aria-label="Admin sidebar">
-      <NavLink to="/admin" className="brand-lockup" onClick={closeMobileSidebar}><span className="brand-mark">B</span><span><b>BAR MENU</b><small>HOSPITALITY STUDIO</small></span></NavLink>
+      <NavLink to="/admin" className="brand-lockup" onClick={closeMobileSidebar}><img className="brand-mark brand-mark-image" src="/blue-lounge-logo.svg" alt="" /><span><b>BAR MENU</b><small>HOSPITALITY STUDIO</small></span></NavLink>
       <div className="workspace-label">WORKSPACE</div>
       <nav className="admin-nav" aria-label="Admin navigation">
         {links.map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} title={isSidebarCollapsed && !isMobile ? label : undefined} onClick={closeMobileSidebar} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}><Icon size={17} strokeWidth={1.6} /><span>{label}</span></NavLink>)}

@@ -33,7 +33,7 @@ export default function AdminLogin() {
   return <main className="login-page">
     <section className="login-card" aria-labelledby="login-title">
       <Link to={`/menu/${profile.slug}`} className="login-back"><ArrowLeft size={16} /> View the public menu</Link>
-      <div className="login-mark"><span className="brand-mark">B</span><span>BAR MENU <small>HOSPITALITY STUDIO</small></span></div>
+      <div className="login-mark"><img className="brand-mark brand-mark-image" src="/blue-lounge-logo.svg" alt="" /><span>BAR MENU <small>HOSPITALITY STUDIO</small></span></div>
       <p className="eyebrow">PRIVATE WORKSPACE</p>
       <h1 id="login-title">Welcome back.</h1>
       <p className="muted">Sign in to manage {profile.name}’s menu, profile and QR code.</p>

@@ -178,6 +178,30 @@ body {
 
 .sidebar-backdrop { display: none; }
 
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: rgb(17 18 17 / 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.customer-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgb(17 18 17 / 0.96);
+  backdrop-filter: blur(14px);
+}
+
+.brand-mark-image {
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border: 0;
+  background: transparent;
+}
+
 @media (max-width: 760px) {
   .admin-content { max-width: 100%; padding-right: 16px; padding-left: 16px; }
   .admin-main { width: 100%; min-width: 0; }
